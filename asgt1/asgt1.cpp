@@ -3,12 +3,12 @@
 using namespace std;
 
 void merge(int leftInd, int midInd, int rightInd);
-const int LENGTH = 100; // Const int to change list length
+const int LENGTH = 10000; // Const int to change list length
 int list[LENGTH] = {0};
 
 void generateList() {
     for (int i = 0; i < LENGTH; i++) {
-        list[i] = rand() % 1000;
+        list[i] = rand() % 100000;
     }
 }
 
@@ -88,7 +88,8 @@ int main() {
     generateList();
     int time = clock();
     mergeSort(0, LENGTH-1);
-    cout << "The following merge sort took " << clock() - time << " cycles, or " << (float)(clock() - time) / CLOCKS_PER_SEC << " seconds." << endl;
+    cout << "The following merge sort took " << clock() - time << " cycles, or "
+    << (float)(clock() - time) / CLOCKS_PER_SEC << " seconds." << endl;
     printList();
     generateList();
     insertionSort();
